@@ -38,7 +38,3 @@ document.querySelector("#btn").addEventListener("click", async (e) => {
     showUserOutput.textContent = err;
   }
 });
-
-// {
-//     "login": "mojombo",
-//     "avatar_url": "https://avatars.githubusercontent.com/u/1?v=4",
