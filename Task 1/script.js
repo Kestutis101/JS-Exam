@@ -9,21 +9,23 @@ Pastaba: rezultatas turi būti matomas pateikus formą ir atvaizduojamas
 <div id="output"></div> viduje. Gautus atsakymus stilizuokite naudojant CSS;
 ------------------------------------------------------------------- */
 
-const userInput = document.querySelector("#search");
-
 document.querySelector("#submit-btn").addEventListener("click", (e) => {
   e.preventDefault();
-  const user = userInput.value;
+  const user = document.querySelector("#search").value;
+  const output = document.querySelector("#output");
+
+  const divContainer = document.createElement("div");
+  divContainer.classList.add("output-container");
+
   const parLb = document.createElement("p");
   const parG = document.createElement("p");
   const parOz = document.createElement("p");
-  const output = document.querySelector("#output");
 
   parLb.textContent = `Svoris svarais (lb) : ${user * 2.2046}`;
 
   parG.textContent = `Svoris gramais (g) : ${user / 0.001}`;
 
   parOz.textContent = `Svoris uncijomis (oz) : ${user * 35.274}`;
-
-  output.append(parLb, parG, parOz);
+  divContainer.append(parLb, parG, parOz);
+  output.append(divContainer);
 });
