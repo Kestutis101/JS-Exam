@@ -3,8 +3,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
-    'Lucida Sans', Arial, sans-serif;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
 
 /* Mobile first */
@@ -58,4 +58,43 @@
   padding: 30px;
   border-radius: 5px;
   background-color: #fff;
+}
+
+.login-div {
+  display: block;
+  font-size: 24px;
+  font-weight: 700;
+  padding: 20px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.img {
+  display: block;
+  margin: 0 auto;
+  width: 200px;
+  border-radius: 50%;
+  box-shadow: 1px 3px 5px black;
+}
+
+@media only screen and (max-width: 768px) {
+  .login-div {
+    font-size: 28px;
+    padding: 25px;
+  }
+
+  .img {
+    width: 250px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .login-div {
+    font-size: 32px;
+    padding-top: 30px;
+  }
+
+  .img {
+    width: 300px;
+  }
 }
