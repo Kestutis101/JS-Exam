@@ -60,11 +60,41 @@
   background-color: #fff;
 }
 
-.par-login {
+.login-div {
+  display: block;
   font-size: 24px;
-  padding-top: 10px;
+  font-weight: 700;
+  padding: 20px;
+  text-align: center;
+  margin: 0 auto;
 }
 
-.par-url {
-  color: #474747;
+.img {
+  display: block;
+  margin: 0 auto;
+  width: 200px;
+  border-radius: 50%;
+  box-shadow: 1px 3px 5px black;
+}
+
+@media only screen and (max-width: 768px) {
+  .login-div {
+    font-size: 28px;
+    padding: 25px;
+  }
+
+  .img {
+    width: 250px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .login-div {
+    font-size: 32px;
+    padding-top: 30px;
+  }
+
+  .img {
+    width: 300px;
+  }
 }

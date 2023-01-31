@@ -16,25 +16,27 @@ const ENDPOINT = "https://api.github.com/users";
 const showUserOutput = document.querySelector("#output");
 const messagePar = document.querySelector("#message");
 
-document.querySelector("#btn").addEventListener("click", async (e) => {
+document.querySelector("#btn").addEventListener("click", async () => {
   try {
     const res = await fetch(ENDPOINT);
     const data = await res.json();
     data.forEach((data) => {
-      const parLogin = document.createElement("p");
-      parLogin.textContent = data.login;
-      parLogin.classList = "par-login";
+      const divLogin = document.createElement("div");
+      divLogin.textContent =
+        data.login.charAt(0).toUpperCase() + data.login.slice(1);
+      divLogin.classList = "login-div";
 
-      const parAvatar = document.createElement("p");
-      parAvatar.textContent = data.avatar_url;
-      parAvatar.classList = "par-url";
-      showUserOutput.append(parLogin, parAvatar);
+      const imgAvatar = document.createElement("img");
+      imgAvatar.setAttribute("src", data.avatar_url);
+      imgAvatar.textContent = data.avatar_url;
+      imgAvatar.classList = "img";
 
-      if (messagePar !== "") {
-        messagePar.textContent = "";
-      }
+      showUserOutput.append(divLogin, imgAvatar);
     });
+    if (messagePar !== "") {
+      messagePar.style.display = "none";
+    }
   } catch (err) {
-    showUserOutput.textContent = err;
+    alert(err);
   }
 });
