@@ -16,18 +16,21 @@ async function loadCars() {
   try {
     const response = await fetch(ENDPOINT);
     const data = await response.json();
+
     data.forEach((car) => {
       const card = document.createElement("div");
       card.classList.add("card");
 
-      const h2Brand = document.createElement("div");
+      const h2Brand = document.createElement("h2");
       h2Brand.classList.add("brand");
       h2Brand.textContent = car.brand;
 
-      const ulModels = document.createElement("div");
+      const ulModels = document.createElement("ul");
+
       car.models.forEach((model) => {
         const liModelItem = document.createElement("p");
         liModelItem.textContent = model;
+
         ulModels.append(liModelItem);
       });
 

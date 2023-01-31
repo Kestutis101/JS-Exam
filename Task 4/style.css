@@ -28,18 +28,27 @@
   color: #333;
 }
 
+#output {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .card {
-  display: block;
-  box-sizing: border-box;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
   text-align: center;
   padding: 25px;
   margin: 15px;
+  overflow-x: hidden;
+  height: 400px;
 }
 
 .brand {
   display: flex;
-  justify-content: space-around;
-  font-size: 30px;
+  justify-content: center;
+  font-size: 2em;
   font-weight: 700;
-  padding-bottom: 20px;
+  padding-bottom: 1em;
 }
