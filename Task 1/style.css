@@ -73,17 +73,9 @@ form {
   font-size: x-large;
 }
 
-.output-container > p {
-  margin-bottom: 30px;
-}
-
 @media only screen and (max-width: 480px) {
   #output {
     justify-content: left;
     font-size: xx-large;
-  }
-
-  .output-container > p {
-    margin-bottom: 20px;
   }
 }
