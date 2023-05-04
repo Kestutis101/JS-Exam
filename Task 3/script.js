@@ -30,8 +30,8 @@ document.querySelector("#btn").addEventListener("click", async () => {
       imgAvatar.setAttribute("src", data.avatar_url);
       imgAvatar.textContent = data.avatar_url;
       imgAvatar.classList = "img";
-
-      showUserOutput.append(divLogin, imgAvatar);
+      divLogin.append(imgAvatar);
+      showUserOutput.append(divLogin);
     });
     if (messagePar !== "") {
       messagePar.style.display = "none";

@@ -60,6 +60,12 @@
   background-color: #fff;
 }
 
+#output {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+
 .login-div {
   display: block;
   font-size: 24px;
@@ -77,18 +83,27 @@
   box-shadow: 1px 3px 5px black;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 999px) {
+  #output {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+
   .login-div {
     font-size: 28px;
     padding: 25px;
   }
 
   .img {
-    width: 250px;
+    width: 150px;
   }
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 630px) {
+  #output {
+    display: block;
+  }
+
   .login-div {
     font-size: 32px;
     padding-top: 30px;
