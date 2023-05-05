@@ -20,20 +20,24 @@ const users = [
   { id: "9", name: "Daniel Cane", age: 51 },
 ];
 
+const userAvgAgeShowInHtmlBody = document.createElement("p");
+const userNamesInHtmlBody = document.createElement("p");
+
 function getUserAverageAge(users) {
-  const usersAverageage = (
+  const usersAverageAge = (
     users.reduce((prev, user) => prev + user.age, 0) / users.length
   ).toFixed(0);
 
-  console.log(usersAverageage);
+  userAvgAgeShowInHtmlBody.textContent = `All users average age: ${usersAverageAge}`;
+  document.body.append(userAvgAgeShowInHtmlBody);
 }
-
-getUserAverageAge(users);
 
 function getUsersNames(users) {
   const newArrayWithNames = new Array(users.map((user) => user.name));
 
-  console.log(newArrayWithNames);
+  userNamesInHtmlBody.textContent = `All users fullnames: ${newArrayWithNames}`;
+  document.body.append(userNamesInHtmlBody);
 }
 
+getUserAverageAge(users);
 getUsersNames(users);
