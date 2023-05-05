@@ -19,7 +19,8 @@ const users = [
   { id: "8", name: "Simon Peterson", age: 30, hasDog: false },
   { id: "9", name: "Daniel Cane", age: 51, hasDog: true },
 ];
-
+const userTitleWhoHasDog = document.createElement("h3");
+const userTitlesWhoIsAdult = document.createElement("h3");
 const userNamesWhoHasDog = document.createElement("p");
 const userNamesWhoIsAdult = document.createElement("p");
 
@@ -27,18 +28,19 @@ function filterDogOwners(users) {
   const filteredArray = users
     .filter((user) => (user.hasDog === true ? user.name : false))
     .map((user) => ` ${user.name}`);
-  userNamesWhoHasDog.textContent = `THEY HAS DOG: ${filteredArray}`;
-  document.body.append(userNamesWhoHasDog);
+  userTitleWhoHasDog.textContent = "Users that has dogs:";
+  userNamesWhoHasDog.textContent = filteredArray;
+  document.body.append(userTitleWhoHasDog, userNamesWhoHasDog);
 }
-
-filterDogOwners(users);
 
 function filterAdults(users) {
   const adults = users
     .filter((user) => (user.age >= 18 ? user.name : false))
     .map((user) => ` ${user.name}`);
-  userNamesWhoIsAdult.textContent = `THEY ARE ADULTS: ${adults}`;
-  document.body.append(userNamesWhoIsAdult);
+  userTitlesWhoIsAdult.textContent = "Users that are adults:";
+  userNamesWhoIsAdult.textContent = adults;
+  document.body.append(userTitlesWhoIsAdult, userNamesWhoIsAdult);
 }
 
+filterDogOwners(users);
 filterAdults(users);
