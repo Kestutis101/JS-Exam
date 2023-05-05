@@ -6,16 +6,26 @@ multiplication(a, b) - priima du skaičius ir grąžina jų daugybos rezultatą;
 division(a, b) - priima du skaičius ir grąžina jų dalybos rezultatą;
 ------------------------------------------------------------------------------------ */
 
-function Calculator(a, b) {
-  this.sum = a + b;
-  this.subtraction = a - b;
-  this.multiplication = a * b;
-  this.division = a / b;
-  console.log(`
-SUM :${sum} 
-SUBS: ${subtraction} 
-MULTI: ${multiplication} 
-DIV: ${division}`);
+function Calculator() {
+  this.sum = function (a, b) {
+    return a + b;
+  };
+
+  this.subtraction = function (a, b) {
+    return a - b;
+  };
+
+  this.multiplication = function (a, b) {
+    return a * b;
+  };
+
+  this.division = function (a, b) {
+    return a / b;
+  };
 }
 
-Calculator(5, 10);
+let calc = new Calculator();
+console.log(calc.sum(5, 10));
+console.log(calc.subtraction(10, 5));
+console.log(calc.multiplication(5, 10));
+console.log(calc.division(10, 2));
